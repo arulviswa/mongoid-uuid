@@ -27,7 +27,7 @@ module Mongoid # :nodoc:
 
       # Sets unique UUID unless uuid is present.
       def generate_uuid
-        self.uuid = UUID.generate if uuid.blank?
+        self.uuid = SecureRandom.uuid if uuid.blank?
       end
     end
   end
