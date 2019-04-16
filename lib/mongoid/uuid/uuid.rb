@@ -7,9 +7,9 @@ module Mongoid # :nodoc:
       included do
         field :uuid, type: String
         index({ uuid: 1 }, unique: true)
-        #before_validation :generate_uuid
-        #validates :uuid, uniqueness: true, uuid: true
-        #attr_readonly :uuid
+        before_validation :generate_uuid
+        validates :uuid, uniqueness: true, uuid: true
+        attr_readonly :uuid
       end
 
       module ClassMethods
